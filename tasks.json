@@ -4,14 +4,34 @@
         {
             "label": "run current file",
             "type": "process",
-            "command": "${workspaceFolder}/venv/bin/python3",
-            "args": [
-                "${file}"
-            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
-        }
+            "command": "${workspaceFolder}/venv/bin/python3",
+            "args": [
+                "${file}"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true
+            },
+        }, {
+            "label": "run pytests",
+            "type": "process",
+            "group": "build",
+            "command": "${workspaceFolder}/venv/bin/python3",
+            "args": [
+                "-m",
+                "pytest",
+                "${workspaceFolder}/app/testing"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true
+            },
+        },
     ]
 }
